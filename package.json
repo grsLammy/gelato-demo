@@ -1,0 +1,35 @@
+{
+  "name": "gelato-ui-demo",
+  "version": "1.0.0",
+  "description": "simple smart contract demo for gelato ui",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Gulam Rasul Shah",
+  "license": "MIT",
+  "devDependencies": {
+    "@nomiclabs/hardhat-ethers": "npm:hardhat-deploy-ethers@^0.3.0-beta.13",
+    "@nomiclabs/hardhat-etherscan": "^2.1.6",
+    "@typechain/ethers-v5": "^7.1.0",
+    "@typechain/hardhat": "^2.3.0",
+    "@types/node": "^16.9.6",
+    "ethers": "^5.5.4",
+    "hardhat": "^2.6.4",
+    "hardhat-deploy": "^0.11.10",
+    "hardhat-gas-reporter": "^1.0.4",
+    "lint-staged": "^11.1.2",
+    "prettier": "^2.4.1",
+    "prettier-plugin-solidity": "^1.0.0-beta.18",
+    "solidity-coverage": "^0.7.17",
+    "ts-node": "^10.2.1",
+    "typechain": "^5.1.2",
+    "typescript": "^4.4.3"
+},
+"lint-staged": {
+    "*.{ts,json,sol,md,yml}": "prettier --write"
+},
+"dependencies": {
+    "@openzeppelin/contracts": "^4.3.2",
+    "dotenv": "^10.0.0"
+  }
+}
