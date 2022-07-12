@@ -2,7 +2,7 @@
 pragma solidity ^0.8.7;
 
 import { IResolver } from "../Interface/IResolver.sol";
-import { IDynamicCounterTest } from "../Interface/IDynamicCounterTest.sol";
+import { IDynamicCounter } from "../Interface/IDynamicCounter.sol";
 
 contract CounterResolver is IResolver {
     address public immutable COUNTER;
@@ -12,12 +12,12 @@ contract CounterResolver is IResolver {
     }
 
     function checker() external view override returns (bool canExec, bytes memory execPayload) {
-        uint256 lastExecuted = IDynamicCounterTest(COUNTER).getLastExecuted();
+        uint256 lastExecuted = IDynamicCounter(COUNTER).getLastExecuted();
 
         canExec = (block.number - lastExecuted) > 5;
 
-        uint256 countToIncrease = IDynamicCounterTest(COUNTER).getTotalCount() + 10;
+        uint256 countToIncrease = IDynamicCounter(COUNTER).getTotalCount() + 10;
 
-        execPayload = abi.encodeWithSelector(IDynamicCounterTest.increaseCount.selector, countToIncrease);
+        execPayload = abi.encodeWithSelector(IDynamicCounter.increaseCount.selector, countToIncrease);
     }
 }
