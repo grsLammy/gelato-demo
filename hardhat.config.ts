@@ -10,7 +10,7 @@ import "@nomiclabs/hardhat-etherscan";
 dotenv.config();
 
 const config: HardhatUserConfig = {
-    solidity: "0.8.4",
+    solidity: "0.8.7",
     networks: {
         polygon: {
             url: "https://polygon-rpc.com/",
