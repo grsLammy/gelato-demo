@@ -16,7 +16,7 @@ contract CounterResolver is IResolver {
 
         canExec = (block.timestamp - lastExecuted) > 120;
 
-        uint256 countToIncrease = IDynamicCounterTest(COUNTER).getTotalCount() * 2;
+        uint256 countToIncrease = IDynamicCounterTest(COUNTER).getTotalCount() + 10;
 
         execPayload = abi.encodeWithSelector(IDynamicCounterTest.increaseCount.selector, countToIncrease);
     }
