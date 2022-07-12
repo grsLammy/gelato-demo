@@ -10,9 +10,9 @@ contract DynamicCounterTest {
     // constructor(address payable _ops) OpsReady(_ops) {}
 
     function increaseCount(uint256 _incrementAmount) external {
-        require(((block.timestamp - lastExecuted) > 120), "Counter: increaseCount: Time not elapsed");
+        require(((block.number - lastExecuted) > 5), "Counter: increaseCount: Time not elapsed");
         totalCount = totalCount + _incrementAmount;
-        lastExecuted = block.timestamp;
+        lastExecuted = block.number;
     }
 
     function getTotalCount() external view returns (uint256) {

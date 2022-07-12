@@ -14,7 +14,7 @@ contract CounterResolver is IResolver {
     function checker() external view override returns (bool canExec, bytes memory execPayload) {
         uint256 lastExecuted = IDynamicCounterTest(COUNTER).getLastExecuted();
 
-        canExec = (block.timestamp - lastExecuted) > 120;
+        canExec = (block.number - lastExecuted) > 5;
 
         uint256 countToIncrease = IDynamicCounterTest(COUNTER).getTotalCount() + 10;
 
