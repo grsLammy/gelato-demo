@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.7;
 
-contract StaticCounterTest {
+contract StaticCounter {
     uint256 private totalCount;
 
     function increaseCount(uint256 _incrementAmount) external {

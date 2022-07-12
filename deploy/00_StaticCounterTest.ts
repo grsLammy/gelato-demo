@@ -7,14 +7,15 @@ const func: DeployFunction = async (hre: HardhatRuntimeEnvironment) => {
     const { deploy } = deployments;
     const { deployer } = await getNamedAccounts();
 
-    await deploy("StaticCounterTest", {
+    await deploy("StaticCounter", {
         from: deployer,
         args: [],
         log: true,
         skipIfAlreadyDeployed: true,
-        contract: "StaticCounterTest",
+        contract: "StaticCounter",
     });
 };
 
-func.tags = ["StaticCounterTest"];
+func.tags = ["StaticCounter"];
+
 export default func;

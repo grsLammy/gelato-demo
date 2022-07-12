@@ -7,11 +7,11 @@ const func: DeployFunction = async (hre: HardhatRuntimeEnvironment) => {
     const { deploy } = deployments;
     const { deployer } = await getNamedAccounts();
 
-    const DynamicCounterTestContract = await deployments.get("DynamicCounterTest");
+    const DynamicCounter = await deployments.get("DynamicCounter");
 
     await deploy("CounterResolver", {
         from: deployer,
-        args: [DynamicCounterTestContract.address],
+        args: [DynamicCounter.address],
         log: true,
         skipIfAlreadyDeployed: true,
         contract: "CounterResolver",
@@ -19,5 +19,6 @@ const func: DeployFunction = async (hre: HardhatRuntimeEnvironment) => {
 };
 
 func.tags = ["CounterResolver"];
-func.dependencies = ["DynamicCounterTest"];
+func.dependencies = ["DynamicCounter"];
+
 export default func;

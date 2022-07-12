@@ -3,7 +3,7 @@ pragma solidity ^0.8.7;
 
 // import { OpsReady } from "./gelato/OpsReady.sol";
 
-contract DynamicCounterTest {
+contract DynamicCounter {
     uint256 private totalCount;
     uint256 private lastExecuted;
 
